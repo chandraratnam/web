@@ -150,3 +150,76 @@ npm run build
 3. Deploy:
    - The built files will be in the `dist/` directory
    - Deploy to your preferred static hosting platform
+
+## GitHub Repository Setup
+
+### Initial Setup
+
+1. Initialize Git repository (if not already initialized):
+```bash
+git init
+```
+
+2. Add your GitHub repository as remote:
+```bash
+git remote add origin https://github.com/username/repository-name.git
+```
+
+3. Create and switch to main branch:
+```bash
+git checkout -b main
+```
+
+### Configuration
+
+1. Create `.gitignore` file to exclude build artifacts and dependencies:
+```
+node_modules/
+dist/
+.env
+*.log
+```
+
+2. Stage and commit your files:
+```bash
+git add .
+git commit -m "Initial commit: Project setup"
+```
+
+3. Push to GitHub:
+```bash
+git push -u origin main
+```
+
+### Best Practices
+
+1. Branch Management:
+   - Use `main` for production-ready code
+   - Create feature branches for new developments
+   - Use meaningful branch names (e.g., `feature/add-booking-system`)
+
+2. Commit Guidelines:
+   - Write clear, descriptive commit messages
+   - Keep commits focused and atomic
+   - Reference issue numbers if applicable
+
+3. Protected Branches:
+   - Enable branch protection rules on GitHub
+   - Require pull request reviews
+   - Enable status checks before merging
+
+4. Environment Variables:
+   - Never commit sensitive data
+   - Use environment variables for API keys
+   - Document required environment variables in `.env.example`
+
+### Deployment
+
+1. Setup deployment from GitHub:
+   - Connect your repository to your hosting platform
+   - Configure build settings
+   - Set up environment variables
+
+2. Automated Deployments:
+   - Configure automatic deployments on push to main
+   - Set up preview deployments for pull requests
