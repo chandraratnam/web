@@ -2,8 +2,10 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
+import { useState } from "react";
 
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
   const bookingUrl = "https://central-coast-body-mechanics.au1.cliniko.com/bookings?business_id=59092&practitioner_id=158654#service";
   const navigation = [
     { name: "What I Treat", href: "/what-i-treat" },
@@ -18,27 +20,39 @@ export default function Header() {
     }
   ];
 
-  const NavLinks = () => (
+  const NavLinks = ({ onClick }: { onClick?: () => void }) => (
     <>
       {navigation.map((item) => (
         <div key={item.name} className="px-5 py-2">
           {item.href.startsWith('#') ? (
             <a
               href={item.href}
-              onClick={item.onClick}
+              onClick={(e) => {
+                item.onClick?.(e);
+                onClick?.();
+              }}
               className="text-gray-600 hover:text-gray-900"
             >
               {item.name}
             </a>
           ) : (
             <Link href={item.href}>
-              <a className="text-gray-600 hover:text-gray-900">{item.name}</a>
+              <a 
+                className="text-gray-600 hover:text-gray-900"
+                onClick={onClick}
+              >
+                {item.name}
+              </a>
             </Link>
           )}
         </div>
       ))}
       <div className="px-5 py-2">
-        <Button className="w-full bg-[#5cb85c] hover:bg-[#4cae4c]" asChild>
+        <Button 
+          className="w-full bg-[#5cb85c] hover:bg-[#4cae4c]" 
+          asChild
+          onClick={onClick}
+        >
           <a href={bookingUrl} target="_blank" rel="noopener noreferrer">
             Book Appointment
           </a>
@@ -57,7 +71,7 @@ export default function Header() {
 
           {/* Mobile menu */}
           <div className="md:hidden">
-            <Sheet>
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon">
                   <Menu className="h-6 w-6" />
@@ -65,7 +79,7 @@ export default function Header() {
               </SheetTrigger>
               <SheetContent>
                 <nav className="mt-8">
-                  <NavLinks />
+                  <NavLinks onClick={() => setIsOpen(false)} />
                 </nav>
               </SheetContent>
             </Sheet>
