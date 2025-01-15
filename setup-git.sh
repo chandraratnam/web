@@ -4,7 +4,7 @@ echo "Initializing Git repository..."
 git init
 
 echo "Creating .gitignore file..."
-cat > .gitignore << EOL
+cat > .gitignore << EOF
 node_modules
 dist
 .DS_Store
@@ -13,7 +13,7 @@ vite.config.ts.*
 *.tar.gz
 .env
 *.log
-EOL
+EOF
 
 echo "Staging files..."
 git add .
@@ -28,4 +28,3 @@ echo "1. Create a new repository on GitHub (if you haven't already)"
 echo "2. Run the following commands to push to GitHub:"
 echo "   git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPO-NAME.git"
 echo "   git push -u origin main"
-EOL
