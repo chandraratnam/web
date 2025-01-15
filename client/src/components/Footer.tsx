@@ -5,12 +5,12 @@ export default function Footer() {
   const bookingUrl = "https://central-coast-body-mechanics.au1.cliniko.com/bookings?business_id=59092&practitioner_id=158654#service";
 
   return (
-    <footer className="bg-gray-50 border-t mt-16" id="contact">
+    <footer className="bg-[#faf6f0] border-t border-[#e8dcc8] mt-16" id="contact">
       <div className="container mx-auto px-4 py-8 md:py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           <div className="space-y-4">
-            <h2 className="text-xl md:text-2xl font-bold">Dave Chandraratnam</h2>
-            <p className="text-sm md:text-base text-gray-600">
+            <h2 className="text-xl md:text-2xl font-bold text-[#2a1810]">Dave Chandraratnam</h2>
+            <p className="text-sm md:text-base text-[#634832]">
               Professional acupuncture and Chinese medicine services in East Gosford, NSW. 
               Extensive experience in treating various conditions with a systematic approach.
             </p>
@@ -22,29 +22,29 @@ export default function Footer() {
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-lg md:text-xl font-semibold">Contact</h3>
+            <h3 className="text-lg md:text-xl font-semibold text-[#2a1810]">Contact</h3>
             <div className="space-y-3">
               <a 
                 href="https://goo.gl/maps/your-location-link" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-start gap-2 text-sm md:text-base hover:text-gray-900"
+                className="flex items-start gap-2 text-sm md:text-base text-[#634832] hover:text-[#2a1810]"
               >
-                <MapPin className="h-5 w-5 text-gray-600 shrink-0 mt-0.5" />
+                <MapPin className="h-5 w-5 text-[#634832] shrink-0 mt-0.5" />
                 <span>37 Althorp Street<br />East Gosford, NSW 2250</span>
               </a>
               <a 
                 href="tel:0243255448" 
-                className="flex items-center gap-2 text-sm md:text-base hover:text-gray-900"
+                className="flex items-center gap-2 text-sm md:text-base text-[#634832] hover:text-[#2a1810]"
               >
-                <Phone className="h-5 w-5 text-gray-600" />
+                <Phone className="h-5 w-5 text-[#634832]" />
                 (02) 4325 5448
               </a>
               <a 
                 href="mailto:dave@curatedhealth.com.au" 
-                className="flex items-center gap-2 text-sm md:text-base hover:text-gray-900"
+                className="flex items-center gap-2 text-sm md:text-base text-[#634832] hover:text-[#2a1810]"
               >
-                <Mail className="h-5 w-5 text-gray-600" />
+                <Mail className="h-5 w-5 text-[#634832]" />
                 dave@curatedhealth.com.au
               </a>
             </div>
