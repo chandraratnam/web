@@ -15,7 +15,7 @@ interface ServiceCardProps {
 
 export default function ServiceCard({ title, description, imageUrl, altText }: ServiceCardProps) {
   return (
-    <Card className="overflow-hidden bg-[#fdfbf7] border-[#e6dfd2] shadow-md hover:shadow-lg transition-all duration-300">
+    <Card className="overflow-hidden bg-[#faf6f0] border-[#e8dcc8] shadow-md hover:shadow-lg transition-all duration-300">
       <AspectRatio ratio={16/9}>
         <img
           src={imageUrl}
@@ -25,10 +25,10 @@ export default function ServiceCard({ title, description, imageUrl, altText }: S
         />
       </AspectRatio>
       <CardHeader>
-        <CardTitle className="text-[#2c1810]">{title}</CardTitle>
+        <CardTitle className="text-[#2a1810]">{title}</CardTitle>
       </CardHeader>
       <CardContent>
-        <p className="text-[#594a42]">{description}</p>
+        <p className="text-[#634832]">{description}</p>
       </CardContent>
     </Card>
   );

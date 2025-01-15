@@ -7,13 +7,13 @@ export default function Home() {
 
   return (
     <div className="flex flex-col gap-12 md:gap-16">
-      <section className="bg-[#fdfbf7] pt-8 pb-12 md:py-16 border-b border-[#e6dfd2]">
+      <section className="bg-[#faf6f0] pt-8 pb-12 md:py-16 border-b border-[#e8dcc8]">
         <div className="container px-4 mx-auto">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-[#2c1810]">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-[#2a1810]">
               Experience Rapid Natural Healing through Personalised Acupuncture
             </h1>
-            <p className="text-base md:text-lg mb-6 md:mb-8 text-[#594a42]">
+            <p className="text-base md:text-lg mb-6 md:mb-8 text-[#634832]">
               Restore balance and vitality to your life with our expertly tailored treatments. We systematically combine ancient wisdom with modern expertise for optimal wellness.
             </p>
             <Button 

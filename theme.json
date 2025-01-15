@@ -4,9 +4,9 @@
   "appearance": "light",
   "radius": 0.5,
   "colors": {
-    "background": "#fdfbf7",
-    "muted": "#f3efe6",
-    "border": "#e6dfd2",
-    "accent": "#8b7355"
+    "background": "#faf6f0",
+    "muted": "#f5efe4",
+    "border": "#e8dcc8",
+    "accent": "#a67c52"
   }
 }
