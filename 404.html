@@ -6,7 +6,7 @@
   <script>
     const l = window.location;
     const segments = l.pathname.split('/');
-    const base = segments.slice(0, 2).join('/'); // /repository-name or ''
+    const base = segments.slice(0, 2).join('/'); // /web or ''
     localStorage.setItem('gh-pages-path', l.pathname + l.search + l.hash);
     l.replace(base + '/');
   </script>

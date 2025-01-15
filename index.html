@@ -51,13 +51,25 @@
     <title>Dave Chandraratnam - Professional Acupuncture in East Gosford</title>
     <meta name="description" content="Experience rapid natural healing through personalised acupuncture treatments in East Gosford, NSW. Professional Chinese medicine services by Dave Chandraratnam." />
     <meta name="keywords" content="acupuncture east gosford, chinese medicine central coast, pain management acupuncture, natural healing nsw" />
-    <base href="/web/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script type="module" crossorigin src="/assets/index-BkWhUREu.js"></script>
+    <script>
+      // Define base URL for assets
+      window.BASE_URL = import.meta.env.VITE_BASE_URL || '';
+
+      // Handle SPA routing for GitHub Pages
+      (function() {
+        const redirectPath = localStorage.getItem('gh-pages-path');
+        if (redirectPath) {
+          localStorage.removeItem('gh-pages-path');
+          window.history.replaceState(null, null, redirectPath);
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-CnNeaPNX.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-t0JKLVTq.css">
   </head>
   <body>
