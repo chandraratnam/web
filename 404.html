@@ -4,10 +4,14 @@
   <meta charset="utf-8">
   <title>Redirecting...</title>
   <script>
-    sessionStorage.redirect = location.href;
+    const l = window.location;
+    const segments = l.pathname.split('/');
+    const base = segments.slice(0, 2).join('/'); // /repository-name or ''
+    localStorage.setItem('gh-pages-path', l.pathname + l.search + l.hash);
+    l.replace(base + '/');
   </script>
-  <meta http-equiv="refresh" content="0;URL='/'">
 </head>
 <body>
+  Redirecting...
 </body>
 </html>

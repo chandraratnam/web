@@ -12,12 +12,15 @@
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
+      // Define base URL for assets
+      window.BASE_URL = import.meta.env.VITE_BASE_URL || '';
+
       // Handle SPA routing for GitHub Pages
       (function() {
-        const path = localStorage.getItem('gh-pages-path');
-        if (path) {
+        const redirectPath = localStorage.getItem('gh-pages-path');
+        if (redirectPath) {
           localStorage.removeItem('gh-pages-path');
-          window.history.replaceState(null, null, path);
+          window.history.replaceState(null, null, redirectPath);
         }
       })();
     </script>
