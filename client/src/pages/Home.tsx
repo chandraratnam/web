@@ -7,16 +7,20 @@ export default function Home() {
 
   return (
     <div className="flex flex-col gap-12 md:gap-16">
-      <section className="bg-background pt-8 pb-12 md:py-16">
+      <section className="bg-[#fdfbf7] pt-8 pb-12 md:py-16 border-b border-[#e6dfd2]">
         <div className="container px-4 mx-auto">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-[#2c1810]">
               Experience Rapid Natural Healing through Personalised Acupuncture
             </h1>
-            <p className="text-base md:text-lg mb-6 md:mb-8 text-gray-600">
+            <p className="text-base md:text-lg mb-6 md:mb-8 text-[#594a42]">
               Restore balance and vitality to your life with our expertly tailored treatments. We systematically combine ancient wisdom with modern expertise for optimal wellness.
             </p>
-            <Button size="lg" className="bg-[#5cb85c] hover:bg-[#4cae4c] w-full sm:w-auto" asChild>
+            <Button 
+              size="lg" 
+              className="bg-[#5cb85c] hover:bg-[#4cae4c] w-full sm:w-auto text-white shadow-lg transition-transform hover:scale-105" 
+              asChild
+            >
               <a href={bookingUrl} target="_blank" rel="noopener noreferrer">
                 Book Appointment <ArrowRight className="ml-2 h-4 w-4" />
               </a>
