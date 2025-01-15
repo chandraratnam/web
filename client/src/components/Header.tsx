@@ -6,11 +6,11 @@ import { useState } from "react";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const base = import.meta.env.BASE_URL;
+  const base = import.meta.env.VITE_BASE_URL || '';
   const bookingUrl = "https://central-coast-body-mechanics.au1.cliniko.com/bookings?business_id=59092&practitioner_id=158654#service";
   const navigation = [
-    { name: "What I Treat", href: `${base}what-i-treat` },
-    { name: "FAQ", href: `${base}faq` },
+    { name: "What I Treat", href: `${base}/what-i-treat` },
+    { name: "FAQ", href: `${base}/faq` },
     {
       name: "Contact",
       href: "#contact",
@@ -66,7 +66,7 @@ export default function Header() {
     <header className="border-b bg-white sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          <Link href={base}>
+          <Link href={`${base}/`}>
             <a className="text-xl font-bold">Dave Chandraratnam</a>
           </Link>
 

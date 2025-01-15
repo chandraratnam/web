@@ -1,4 +1,4 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, Router as BaseRouter } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -11,23 +11,26 @@ import Blog from "@/pages/Blog";
 import NotFound from "@/pages/not-found";
 
 // For GitHub Pages deployment
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.VITE_BASE_URL || '';
 
+// Custom router for handling the base path
 function Router() {
   return (
-    <div className="flex min-h-screen flex-col">
-      <Header />
-      <main className="flex-1">
-        <Switch>
-          <Route path={`${base}`} component={Home} />
-          <Route path={`${base}what-i-treat`} component={WhatITreat} />
-          <Route path={`${base}faq`} component={FAQ} />
-          <Route path={`${base}blog`} component={Blog} />
-          <Route component={NotFound} />
-        </Switch>
-      </main>
-      <Footer />
-    </div>
+    <BaseRouter base={base}>
+      <div className="flex min-h-screen flex-col">
+        <Header />
+        <main className="flex-1">
+          <Switch>
+            <Route path="/" component={Home} />
+            <Route path="/what-i-treat" component={WhatITreat} />
+            <Route path="/faq" component={FAQ} />
+            <Route path="/blog" component={Blog} />
+            <Route component={NotFound} />
+          </Switch>
+        </main>
+        <Footer />
+      </div>
+    </BaseRouter>
   );
 }
 

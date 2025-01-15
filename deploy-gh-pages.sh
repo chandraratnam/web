@@ -1,41 +1,26 @@
 #!/bin/bash
 
-# Build the project
+# Build the project with the correct base URL for GitHub Pages
 echo "Building the project..."
-npm run build
+VITE_BASE_URL="/web" npm run build
 
 # Create a new directory for GitHub Pages
 echo "Preparing GitHub Pages deployment..."
 rm -rf gh-pages
 mkdir gh-pages
 
-# Copy the built files
+# Copy the built files to root of gh-pages
 echo "Copying built files..."
 cp -r dist/public/* gh-pages/
+cp client/404.html gh-pages/404.html
 
 # Create necessary GitHub Pages files
 echo "Creating GitHub Pages files..."
 touch gh-pages/.nojekyll
-cat > gh-pages/404.html << EOF
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>Redirecting...</title>
-  <script>
-    sessionStorage.redirect = location.href;
-  </script>
-  <meta http-equiv="refresh" content="0;URL='/'">
-</head>
-<body>
-</body>
-</html>
-EOF
 
 echo "Files prepared for GitHub Pages deployment."
 echo ""
 echo "Next steps:"
-echo "1. Create a new branch called 'gh-pages'"
-echo "2. Copy the contents of the gh-pages directory to the gh-pages branch"
-echo "3. Push the gh-pages branch to GitHub"
-echo "4. Enable GitHub Pages in your repository settings"
+echo "1. Stage all files in the gh-pages directory"
+echo "2. Push to the gh-pages branch on GitHub"
+echo "3. Ensure GitHub Pages is enabled in repository settings with gh-pages branch"

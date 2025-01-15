@@ -4,6 +4,7 @@ import BlogPost from "@/components/BlogPost";
 
 export default function Blog() {
   const [currentTab] = useState("latest");
+  const base = import.meta.env.VITE_BASE_URL || '';
 
   const blogPosts = [
     {
@@ -15,7 +16,7 @@ export default function Blog() {
         <p>Chronic pain affects millions of people worldwide, impacting their quality of life and daily activities. 
         Traditional Chinese Medicine, particularly acupuncture, offers a natural and effective approach to managing 
         chronic pain conditions.</p>
-        
+
         <h3>How Acupuncture Works for Pain Relief</h3>
         <p>Acupuncture works through multiple mechanisms to reduce pain and promote healing:</p>
         <ul>
@@ -72,7 +73,7 @@ export default function Blog() {
                 title={post.title}
                 date={post.date}
                 content={post.content}
-                imageUrl={post.imageUrl}
+                imageUrl={post.imageUrl.startsWith('http') ? post.imageUrl : `${base}${post.imageUrl}`}
               />
             ))}
           </TabsContent>
@@ -86,7 +87,7 @@ export default function Blog() {
                   title={post.title}
                   date={post.date}
                   content={post.content}
-                  imageUrl={post.imageUrl}
+                  imageUrl={post.imageUrl.startsWith('http') ? post.imageUrl : `${base}${post.imageUrl}`}
                 />
               ))}
           </TabsContent>
@@ -100,7 +101,7 @@ export default function Blog() {
                   title={post.title}
                   date={post.date}
                   content={post.content}
-                  imageUrl={post.imageUrl}
+                  imageUrl={post.imageUrl.startsWith('http') ? post.imageUrl : `${base}${post.imageUrl}`}
                 />
               ))}
           </TabsContent>
