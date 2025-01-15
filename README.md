@@ -223,3 +223,37 @@ git push -u origin main
 2. Automated Deployments:
    - Configure automatic deployments on push to main
    - Set up preview deployments for pull requests
+
+## GitHub Pages Deployment
+
+To deploy this site to GitHub Pages:
+
+1. Build and prepare the files:
+```bash
+# Make the deploy script executable
+chmod +x deploy-gh-pages.sh
+# Run the deploy script
+./deploy-gh-pages.sh
+```
+
+2. Create and push to gh-pages branch:
+```bash
+git checkout -b gh-pages
+cp -r gh-pages/* .
+git add .
+git commit -m "Deploy to GitHub Pages"
+git push origin gh-pages
+```
+
+3. Configure GitHub Pages:
+- Go to your repository settings
+- Navigate to "Pages"
+- Select "gh-pages" branch as the source
+- Save the changes
+
+4. Custom Domain (Optional):
+- Add your domain in the repository settings
+- Create a CNAME file in the root of gh-pages branch
+- Update your DNS settings with your domain provider
+
+Note: The site will be available at `https://[username].github.io/[repository-name]` or your custom domain if configured.
