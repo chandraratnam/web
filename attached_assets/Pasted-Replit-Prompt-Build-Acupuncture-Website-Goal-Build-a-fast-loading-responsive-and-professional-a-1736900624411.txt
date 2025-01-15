@@ -1,0 +1,86 @@
+Replit Prompt: Build Acupuncture Website
+
+Goal: Build a fast-loading, responsive, and professional acupuncture website with a warm, appealing color scheme. The design should convey authority while being visually appealing and persuasive enough to encourage bookings.
+
+Design and Structure
+	1.	Homepage Title and Subheading:
+	•	Title: “Experience Rapid Natural Healing through Personalised Acupuncture.”
+	•	Subheading: “Restore balance and vitality to your life with our expertly tailored treatments. We systematically combine ancient wisdom with modern expertise for optimal wellness.”
+	•	No hero image on the homepage.
+	2.	Call-to-Action Buttons:
+	•	Include a “Book Appointment” button directly under the subheading on the homepage.
+	•	Add a “Book Appointment” button in both the header and footer for easy access.
+	•	Buttons should be a friendly green color (e.g., #5cb85c) that stands out prominently on the site and links to:
+https://central-coast-body-mechanics.au1.cliniko.com/bookings?business_id=59092&practitioner_id=158654#service.
+	3.	Color Scheme:
+	•	Use warm, earthy tones (beige, soft greens, light browns) to create a calming and professional aesthetic.
+	•	Ensure the green buttons serve as clear calls-to-action and stand out.
+	4.	Service Section:
+	•	Create 4 boxes on the homepage to showcase services:
+	•	Pain Management: Brief blurb like “Relieve chronic and acute pain through targeted treatments.”
+	•	Stress and Anxiety: Blurb like “Regain calm and focus with relaxing therapies.”
+	•	Women’s Health: Blurb like “Address hormonal imbalances and fertility concerns naturally.”
+	•	Digestive Health: Blurb like “Improve digestion and gut health with personalized care.”
+	•	Each box should include an appropriate image downloaded and linked locally.
+	5.	Footer:
+	•	Display the following text:
+Dave Chandraratnam – Professional acupuncture and Chinese medicine services in East Gosford, NSW. Extensive experience in treating various conditions with a systematic approach.
+	•	Include a Contact Section:
+
+Contact  
+Dave can be found practising at:  
+37 Althorp Street , East Gosford, NSW 2250  
+(02) 4325 5448  
+dave@curatedhealth.com.au  
+
+
+	•	Add a Book Appointment button in the footer as well.
+
+	6.	Smooth Scrolling:
+	•	Use smooth scrolling animations for navigation links and anchors (e.g., the “Contact” link in the header scrolling down to the footer).
+
+Additional Pages
+	1.	What I Treat Page:
+	•	Content should be taken from:
+https://chandraratnam.com/what-i-treat/index.html
+	•	Reformat the content for readability and ensure it loads well on mobile.
+	2.	FAQ Page:
+	•	Content should be taken from:
+https://chandraratnam.com/faq/index.html
+	•	Reformat the content for clarity and optimize it for mobile usability.
+	3.	Blog:
+	•	Add functionality for a blog but do not include links to it on the homepage or header initially.
+	•	Blog entries should be simple and include the ability to embed images or videos.
+
+Technical and Functional Requirements
+	1.	Performance Optimization:
+	•	Compress all images and text for faster load times, particularly on slow mobile connections.
+	•	Minimize JavaScript usage to reduce load time and improve deployment efficiency.
+	•	Ensure smooth scrolling animations are lightweight and do not impact performance.
+	2.	Google Analytics Integration:
+	•	Include a shared file for Google Analytics setup (e.g., analytics.js) that can be referenced across all pages.
+	3.	SEO Optimization:
+	•	Target local SEO for the Central Coast of NSW, using keywords like “Acupuncture East Gosford,” “Pain Management Central Coast,” etc.
+	•	Add structured data (schema markup) for local businesses to improve search visibility.
+	4.	Responsive Design:
+	•	Ensure the website looks and functions perfectly across all devices, especially mobile phones.
+	•	Implement responsive layouts for services and contact sections.
+	5.	Readme File:
+	•	Create a README.md file to:
+	•	Explain the file structure.
+	•	Provide instructions for adding blog entries, static assets, and updates to content/pages.
+	•	Describe where and how to add/edit Google Analytics.
+	•	Include tips for improving SEO (e.g., meta descriptions, alt tags for images).
+
+What to Avoid
+	1.	No contact form.
+	2.	No testimonials.
+	3.	No carousels.
+	4.	Avoid excessive animations or transitions that could slow down the site.
+
+Additional Notes
+	•	The header should include:
+	•	“Dave Chandraratnam” on the left.
+	•	Navigation links (What I Treat, FAQ, Contact) on the right.
+	•	The Contact link should scroll down to the footer.
+	•	The website should be built to support deployment on static hosting platforms like Netlify or similar.
