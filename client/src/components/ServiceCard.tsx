@@ -21,9 +21,8 @@ export default function ServiceCard({
   altText,
   details = [] 
 }: ServiceCardProps) {
-  // Ensure image URLs are correctly handled for GitHub Pages deployment
-  const base = import.meta.env.VITE_BASE_URL || '';
-  const fullImageUrl = imageUrl.startsWith('http') ? imageUrl : `${base}${imageUrl}`;
+  // Use relative paths for local assets
+  const fullImageUrl = imageUrl.startsWith('http') ? imageUrl : `./assets${imageUrl}`;
 
   return (
     <Card className="overflow-hidden bg-[#faf6f0] border-[#e8dcc8] shadow-md hover:shadow-lg transition-all duration-300">

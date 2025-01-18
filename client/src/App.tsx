@@ -10,13 +10,13 @@ import FAQ from "@/pages/FAQ";
 import Blog from "@/pages/Blog";
 import NotFound from "@/pages/not-found";
 
-// For GitHub Pages deployment
-const base = import.meta.env.VITE_BASE_URL || '';
+// Use a constant for the base URL
+const BASE_URL = '/web';
 
 // Custom router for handling the base path
 function Router() {
   return (
-    <BaseRouter base={base}>
+    <BaseRouter base={BASE_URL}>
       <div className="flex min-h-screen flex-col">
         <Header />
         <main className="flex-1">

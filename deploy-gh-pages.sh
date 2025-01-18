@@ -1,11 +1,12 @@
 #!/bin/bash
 
-# Get repository name from git config
-REPO_NAME=$(basename `git rev-parse --show-toplevel`)
+# Define GitHub Pages URL
+REPO_NAME="web"
+BASE_URL="/web"
 
 # Build the project with the correct base URL for GitHub Pages
 echo "Building the project..."
-VITE_BASE_URL="/${REPO_NAME}" npm run build
+VITE_BASE_URL="${BASE_URL}" npm run build
 
 # Create a new directory for GitHub Pages
 echo "Preparing GitHub Pages deployment..."
@@ -21,6 +22,12 @@ cp client/404.html gh-pages/404.html
 echo "Creating GitHub Pages files..."
 touch gh-pages/.nojekyll
 
+# Update asset paths in index.html to be relative
+echo "Updating asset paths..."
+sed -i.bak 's|src="/assets/|src="./assets/|g' gh-pages/index.html
+sed -i.bak 's|href="/assets/|href="./assets/|g' gh-pages/index.html
+rm gh-pages/index.html.bak
+
 # Verify the build output
 echo "Verifying build output..."
 if [ -f "gh-pages/index.html" ] && [ -d "gh-pages/assets" ]; then
@@ -30,19 +37,12 @@ else
   exit 1
 fi
 
-# Verify assets paths in index.html
-echo "Verifying asset paths in index.html..."
-if grep -q "\"/${REPO_NAME}/assets/" gh-pages/index.html; then
-  echo "✓ Asset paths are correctly prefixed with repository name"
-else
-  echo "Warning: Asset paths might not be correctly prefixed. Please verify the deployment."
-fi
-
-# Print the repository name and base URL for verification
+# Print configuration info
 echo ""
 echo "Build Configuration:"
-echo "Repository Name: ${REPO_NAME}"
-echo "Base URL: /${REPO_NAME}"
+echo "Repository: chandraratnam/web"
+echo "Base URL: ${BASE_URL}"
+echo "GitHub Pages URL: https://chandraratnam.github.io${BASE_URL}"
 echo ""
 echo "Files prepared for GitHub Pages deployment."
 echo ""
