@@ -11,9 +11,16 @@ interface ServiceCardProps {
   description: string;
   imageUrl: string;
   altText: string;
+  details?: string[];
 }
 
-export default function ServiceCard({ title, description, imageUrl, altText }: ServiceCardProps) {
+export default function ServiceCard({ 
+  title, 
+  description, 
+  imageUrl, 
+  altText,
+  details = [] 
+}: ServiceCardProps) {
   // Ensure image URLs are correctly handled for GitHub Pages deployment
   const base = import.meta.env.VITE_BASE_URL || '';
   const fullImageUrl = imageUrl.startsWith('http') ? imageUrl : `${base}${imageUrl}`;
@@ -32,7 +39,14 @@ export default function ServiceCard({ title, description, imageUrl, altText }: S
         <CardTitle className="text-[#2a1810]">{title}</CardTitle>
       </CardHeader>
       <CardContent>
-        <p className="text-[#634832]">{description}</p>
+        <p className="text-[#634832] mb-4">{description}</p>
+        {details && details.length > 0 && (
+          <ul className="list-disc list-inside text-[#634832] space-y-1">
+            {details.map((detail, index) => (
+              <li key={index}>{detail}</li>
+            ))}
+          </ul>
+        )}
       </CardContent>
     </Card>
   );
